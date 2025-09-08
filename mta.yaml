@@ -1,0 +1,57 @@
+_schema-version: "3.2"
+ID: Invoices
+version: 0.0.1
+modules:
+- name: Invoices-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: Invoices-destination-service
+    parameters:
+      content-target: true
+  - name: Invoices_html_repo_host
+    parameters:
+      service-key:
+        name: Invoices_html_repo_host-key
+  - name: uaa_Invoices
+    parameters:
+      service-key:
+        name: uaa_Invoices-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: invoices_Invoices_html_repo_host
+          ServiceInstanceName: Invoices-html5-app-host-service
+          ServiceKeyName: Invoices_html_repo_host-key
+          sap.cloud.service: invoices
+        - Authentication: OAuth2UserTokenExchange
+          Name: invoices_uaa_Invoices
+          ServiceInstanceName: Invoices-xsuaa-service
+          ServiceKeyName: uaa_Invoices-key
+          sap.cloud.service: invoices
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+resources:
+- name: Invoices-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      version: 1.0.0
+    service: destination
+    service-name: Invoices-destination-service
+    service-plan: lite
+- name: Invoices_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: Invoices-html5-app-host-service
+    service-plan: app-host
+- name: uaa_Invoices
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: Invoices-xsuaa-service
+    service-plan: application
