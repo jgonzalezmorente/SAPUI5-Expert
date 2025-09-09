@@ -5,13 +5,12 @@ sap.ui.define([
 ],
 /**
  * @param {typeof sap.ui.core.mvc.Controller} Controller 
- * @param {typeof sap.m.MessageToast} MessageToast      
- * @param {typeof logaligroup.SAPUI5.model.Models} ResourceModel
+ * @param {typeof sap.m.MessageToast} MessageToast       
  */
 function (
     Controller, 
     MessageToast, 
-    formatter
+   formatter
 ) {
     'use strict';
     return Controller.extend('logaligroup.SAPUI5.controllers.App', {

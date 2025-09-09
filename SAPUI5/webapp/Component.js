@@ -24,11 +24,11 @@ function(UIComponent, Models, ResourceModel) {
             // Set data model on the view
             this.setModel(Models.createRecipient());
             
-            // Set i18n model on the view
+            // // Set i18n model on the view
             const i18nModel = new ResourceModel({
                 bundleName: 'logaligroup.SAPUI5.i18n.i18n'
             });
-            this.setModel(i18nModel, 'i18n');
+            // this.setModel(i18nModel, 'i18n');
             sap.ui.getCore().setModel(i18nModel, 'i18n');
         }
     });
