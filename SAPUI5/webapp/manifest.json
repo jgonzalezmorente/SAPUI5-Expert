@@ -51,6 +51,10 @@
         "settings": {
           "bundleName": "logaligroup.SAPUI5.i18n.i18n"
         }
+      },
+      "invoices": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "Invoices.json"
       }
     },
     "resources": {
@@ -69,8 +73,8 @@
         "type": "View",
         "viewType": "XML",
         "path": "logaligroup.SAPUI5.view",
-        "async": true        
-        
+        "async": true
+
       },
       "routes": [
         {

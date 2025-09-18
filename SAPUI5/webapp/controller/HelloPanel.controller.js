@@ -1,23 +1,23 @@
 sap.ui.define([
     'sap/ui/core/mvc/Controller',
-    'sap/m/MessageToast',    
-    'logaligroup/SAPUI5/model/formatter'    
+    'sap/m/MessageToast',
+    'logaligroup/SAPUI5/model/formatter'
 ],
 /**
- * @param {typeof sap.ui.core.mvc.Controller} Controller 
- * @param {typeof sap.m.MessageToast} MessageToast 
+ * @param {typeof sap.ui.core.mvc.Controller} Controller
+ * @param {typeof sap.m.MessageToast} MessageToast
  */
 function (
-    Controller, 
-    MessageToast,     
+    Controller,
+    MessageToast,
     formatter,
 ) {
     'use strict';
     return Controller.extend('logaligroup.SAPUI5.controllers.HelloPanel', {
-        onInit: function() {
-         
-        },
         formatter,
+        onInit: function() {
+
+        },
         onShowHello: function() {
             // Read text from i18n model
             const oBundle = this.getView().getModel('i18n').getResourceBundle();

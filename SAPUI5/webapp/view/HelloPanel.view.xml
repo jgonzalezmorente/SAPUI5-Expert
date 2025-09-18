@@ -1,31 +1,31 @@
 <mvc:View controllerName="logaligroup.SAPUI5.controller.HelloPanel"
-          xmlns="sap.m" 
+          xmlns="sap.m"
           xmlns:mvc="sap.ui.core.mvc"
           xmlns:core="sap.ui.core"
           displayBlock="true">
 
     <Panel id="panel" headerText="{i18n>helloPanel}" class="sapUiResponsiveMargin" width="auto">
         <content>
-            <Button id="helloDialogButton" 
-                    icon="sap-icon://action" 
-                    text="{i18n>helloDialogBut}" 
-                    press=".onOpenDialog" 
+            <Button id="helloDialogButton"
+                    icon="sap-icon://action"
+                    text="{i18n>helloDialogBut}"
+                    press=".onOpenDialog"
                     class="sapUiSmallMarginEnd"/>
 
             <Button id="btn" text="{i18n>showHelloButtonText}" press=".onShowHello" class="sapUiSmallMarginEnd"/>
-            
-            <Input id="input" 
+
+            <Input id="input"
                 value="{/recipient/name}"
                 valueLiveUpdate="true"
                 width="60%"/>
-            <Text 
+            <Text
                 id="text"
                 text="{
                     parts: [
                         { path: '/recipient/name' }
                     ],
                     formatter: '.formatter.hello'
-                }" 
+                }"
                 class="sapUiSmallMargin boldElements sapThemeBrand-asColor"/>
         </content>
     </Panel>
