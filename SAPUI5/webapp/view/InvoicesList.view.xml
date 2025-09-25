@@ -6,7 +6,7 @@
           headerText="{i18n>invoiceListTitle}"
           class="sapUiResponsiveMargin"
           width="auto"
-          items="{ path: 'invoices>/Invoices',
+          items="{ path: 'northwind>/Invoices',
                    sorter: { path: 'ShipperName', group: true }
                   }">
           <headerToolbar>
@@ -18,22 +18,20 @@
           </headerToolbar>
           <items>
             <ObjectListItem id="_IDGenObjectListItem"
-                            title="{invoices>Quantity} x {invoices>ProductName}"
+                            title="{northwind>Quantity} x {northwind>ProductName}"
                             number="{
                               parts: [
-                                { path: 'invoices>ExtendedPrice' },
+                                { path: 'northwind>ExtendedPrice' },
                                 { path: 'currency>/eur' }
                               ],
                               formatter: '.formatter.formatExtendedPrice'}"
                               numberUnit="{currency>/eur}"
-                              numberState="{= ${invoices>ExtendedPrice} > 50 ? 'Success' : 'Error'}">
-
-                <firstStatus>
+                              numberState="{= ${northwind>ExtendedPrice} > 50 ? 'Success' : 'Error'}">
+                <!-- <firstStatus>
                     <ObjectStatus id="_IDGenObjectStatus"
-                                  text="{ path: 'invoices>Status',
-                                          formatter: '.formatter.invoiceStatus'}"></ObjectStatus>
-                </firstStatus>
-
+                                  text="{ path: 'northwind>Status',
+                                          formatter: '.formatter.invoiceStatus'}" />
+                </firstStatus> -->
             </ObjectListItem>
           </items>
     </List>

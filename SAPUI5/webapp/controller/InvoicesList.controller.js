@@ -30,8 +30,7 @@ function(Controller, JSONModel, InvoicesFormatter, Filter, FilterOperator) {
             }
             const oList = this.getView().byId('invoiceList');
             const oBinding = oList.getBinding('items');
-            oBinding.filter(aFilter);
-            console.log(aFilter);
+            oBinding.filter(aFilter);            
         }
     });s
 

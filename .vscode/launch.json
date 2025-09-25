@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "SAPUI5 - Run Configuration",
+      "name": "SAPUI5-config1",
       "type": "node",
       "request": "launch",
       "cwd": "${workspaceFolder}/SAPUI5",
@@ -22,8 +22,9 @@
       "internalConsoleOptions": "openOnSessionStart",
       "outputCapture": "std",
       "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
         "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/Invoices/SAPUI5\"}",
-        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+        "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/V2\",\"url\":\"https://services.odata.org\",\"destination\":\"Northwind\"}]"
       }
     }
   ]
